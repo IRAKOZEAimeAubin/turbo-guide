@@ -1,0 +1,30 @@
+{
+  "name": "turbo-guide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IRAKOZEAimeAubin/turbo-guide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IRAKOZEAimeAubin/turbo-guide/issues"
+  },
+  "homepage": "https://github.com/IRAKOZEAimeAubin/turbo-guide#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "stripe": "^10.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

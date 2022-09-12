@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+    --body-font: 'Montserrat', sans-serif;
+    --very-dark-grey-color: #23272A;
+    --very-light-green-color: #57F287;
+    --very-light-grey-color: #F7F6FB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--body-font);
+}
+
+body{
+    background: var(--very-light-grey-color);
+}
+
+section.container {
+    display: flex;
+    min-height: 80vh;
+}
+
+.form {
+    margin: auto;
+    max-width: 90%;
+    text-align: center;
+    background: var(--very-light-grey-color);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    box-shadow: 0 0 10px 0 rgba(4, 3, 15, 0.4),
+        0 5px 5px 0 rgba(4, 3, 15, 0.44);
+}
+
+form.login-form,
+form.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+span.title {
+    font-weight: 600;
+    color: var(--very-dark-grey-color);
+    letter-spacing: 0.08rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+input {
+    margin-bottom: 0.8rem;
+    padding: 0.4rem;
+    border: 0.01rem solid var(--very-dark-grey-color);
+    border-radius: 0.2rem;
+    outline: none;
+    color: var(--very-dark-grey-color);
+}
+
+.button {
+    padding: 0.4rem;
+    background: var(--very-dark-grey-color);
+    color: var(--very-light-green-color);
+    border: none;
+    border-radius: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    transition: .8s;
+}
+
+.button:hover {
+   background: var(--very-light-green-color);
+   color: var(--very-dark-grey-color); 
+}
+
+.redirect-text {
+    font-weight: 600;
+    font-size: .8rem;
+}
+
+.redirect-text span {
+    opacity: .6;
+}
+
+.redirect-text a {
+    text-decoration: none;
+    color: var(--very-light-green-color);
+}
