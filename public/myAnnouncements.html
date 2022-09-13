@@ -24,7 +24,7 @@
                 </a>
 
                 <div class="nav_list">
-                    <a href="./approvedTestimonies.html" class="nav_link active">
+                    <a href="./approvedTestimonies.html" class="nav_link">
                         <i class="fa-solid fa-book nav_icon"></i>
                         <span class="nav_name">Testimonies</span>
                     </a>
@@ -36,7 +36,7 @@
                         <i class="fa-solid fa-address-book nav_icon"></i>
                         <span class="nav_name">My Testimonies</span>
                     </a>
-                    <a href="./myAnnouncements.html" class="nav_link">
+                    <a href="./myAnnouncements.html" class="nav_link active">
                         <i class="fa-sharp fa-solid fa-bullhorn nav_icon"></i>
                         <span class="nav_name">My Announcements</span>
                     </a>
@@ -52,7 +52,28 @@
             </a>
         </nav>
     </div>
-    <span>My Announcements</span>
+     <section class="container">
+        <div class="intro">
+            <span>Announcements</span>
+            <div class="intro-buttons">
+                <button id="view-my-announcements">View My Announcements</button>
+                <button id="create-announcement">Create Announcements</button>
+            </div>
+        </div>
+        <div class="form" id="my-announcement">
+            <form class="announcement-form">
+                <input type="text" id="" placeholder="Title">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Body"></textarea>
+                <input type="text" id="" placeholder="Tag">
+                <input type="text" id="" placeholder="Status" disabled>
+                <input type="text" id="" placeholder="Id" disabled>
+                <div class="buttons">
+                    <button class="update">Update</button>
+                    <button class="delete">Delete</button>
+                </div>
+            </form>
+        </div>
+    </section>
     <script src="./script.js"></script>
 </body>
 </html>

@@ -24,7 +24,7 @@
                 </a>
 
                 <div class="nav_list">
-                    <a href="./approvedTestimonies.html" class="nav_link active">
+                    <a href="./approvedTestimonies.html" class="nav_link">
                         <i class="fa-solid fa-book nav_icon"></i>
                         <span class="nav_name">Testimonies</span>
                     </a>
@@ -32,7 +32,7 @@
                         <i class="fa-solid fa-scroll nav_icon"></i>
                         <span class="nav_name">Announcements</span>
                     </a>
-                    <a href="./myTestimonies.html" class="nav_link">
+                    <a href="./myTestimonies.html" class="nav_link active">
                         <i class="fa-solid fa-address-book nav_icon"></i>
                         <span class="nav_name">My Testimonies</span>
                     </a>
@@ -52,7 +52,28 @@
             </a>
         </nav>
     </div>
-    <span>My Testimonies</span>
+    <section class="container">
+        <div class="intro">
+            <span>Testimonies</span>
+            <div class="intro-buttons">
+                <button id="view-my-testimonies">View My Testimonies</button>
+                <button id="create-testimony">Create Testimony</button>
+            </div>
+        </div>
+        <div class="form" id="my-testimony">
+            <form class="testimony-form">
+                <input type="text" id="" placeholder="Title">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Body"></textarea>
+                <input type="text" id="" placeholder="Tag">
+                <input type="text" id="" placeholder="Status" disabled>
+                <input type="text" id="" placeholder="Id" disabled>
+                <div class="buttons">
+                    <button class="update">Update</button>
+                    <button class="delete">Delete</button>
+                </div>
+            </form>
+        </div>
+    </section>
     <script src="./script.js"></script>
 </body>
 </html>

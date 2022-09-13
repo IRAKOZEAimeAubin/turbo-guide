@@ -6,6 +6,7 @@
     --first-color: #23272A;
     --first-color-light: #57F287;
     --white-color: #F7F6FB;
+    --red-color: #DC143C;
     --body-font: 'Montserrat', sans-serif;
     --normal-font-size: 1rem;
     --z-fixed: 100;
@@ -122,6 +123,129 @@ a {
     width: 0.125rem;
     height: 2rem;
     background-color: var(--white-color);
+}
+
+section.container {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.intro span {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+.intro button {
+    max-width: 20%;
+    padding: 0.4rem;
+    margin-top: 1rem;
+    background: var(--first-color);
+    color: var(--first-color-light);
+    border: none;
+    border-radius: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    transition: .8s;
+}
+
+.intro button:hover {
+    background: var(--first-color-light);
+    color: var(--first-color);
+}
+
+.content {
+    margin: auto;
+}
+
+.content span {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.content p {
+    line-height: 1.4rem;
+}
+
+.content .donate {
+    max-width: 20%;
+    padding: 0.4rem;
+    margin-top: 1rem;
+    background: var(--first-color);
+    color: var(--first-color-light);
+    border: none;
+    border-radius: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: .8s;
+}
+
+.form {
+    margin: auto;
+    max-width: 100%;
+    text-align: center;
+    padding-bottom: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+form.testimony-form,
+form.announcement-form {
+    display: flex;
+    flex-direction: column;
+}
+
+form.testimony-form input,
+form.announcement-form input  {
+    margin-bottom: 0.8rem;
+    padding: 0.4rem;
+    border: 0.01rem solid var(--first-color);
+    border-radius: 0.2rem;
+    outline: none;
+    color: var(--first-color);
+}
+
+form.testimony-form textarea,
+form.announcement-form textarea {
+    margin-bottom: 0.8rem;
+    padding: 0.4rem;
+    border: 0.01rem solid var(--first-color);
+    border-radius: 0.2rem;
+    outline: none;
+    color: var(--first-color);
+}
+
+form.testimony-form .buttons button,
+form.announcement-form .buttons button {
+    padding: 0.4rem;
+    border: none;
+    border-radius: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    transition: .8s;
+}
+
+form.testimony-form .buttons button.update,
+form.announcement-form .buttons button.update {
+    color: var(--first-color);
+    background: var(--first-color-light);
+}
+
+form.testimony-form .buttons button.delete,
+form.announcement-form .buttons button.delete {
+    color: var(--first-color);
+    background: var(--red-color);
 }
 
 @media screen and (min-width: 768px) {
