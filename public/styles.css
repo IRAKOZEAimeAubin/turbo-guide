@@ -213,6 +213,7 @@ form.announcement-form input  {
     border-radius: 0.2rem;
     outline: none;
     color: var(--first-color);
+    font-family: var(--body-font);
 }
 
 form.testimony-form textarea,
@@ -223,6 +224,7 @@ form.announcement-form textarea {
     border-radius: 0.2rem;
     outline: none;
     color: var(--first-color);
+    font-family: var(--body-font);
 }
 
 form.testimony-form .buttons button,
@@ -234,6 +236,7 @@ form.announcement-form .buttons button {
     font-weight: 500;
     margin-bottom: 1rem;
     transition: .8s;
+    font-family: var(--body-font);
 }
 
 form.testimony-form .buttons button.update,

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Create Testimony</title>
+</head>
+<body>
+    <section class="container">
+        <div class="form">
+            <span class="title">Create Testimony</span>
+            <form class="signup-form">
+                <input type="text" id="testimony-title" required placeholder="Title" autocomplete="off">
+                <textarea id="testimony-body" cols="30" rows="10" placeholder="Body"></textarea>
+                <input type="text" id="testimony-tag" required placeholder="Tag" autocomplete="off">
+                <button class="button" id="create-testimony-btn">Create Testimony</button>
+                <div class="redirect-text">
+                    <a href="./myTestimonies.html">Go to my testimonies</a>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        window.addEventListener( 'load', () => {
+            document.getElementById( 'create-testimony-btn' ).addEventListener( 'click', function (e) {
+            e.preventDefault();
+            const testimony = {
+                title: document.getElementById( 'testimony-title' ).value,
+                body: document.getElementById( 'testimony-body' ).value,
+                tag: document.getElementById( 'testimony-tag' ).value,
+                status: 'pending',
+                id: 1
+            }
+            window.localStorage.setItem( 'testimony', JSON.stringify( testimony ) );
+            console.log( testimony );
+        });
+        } )
+    </script>
+    <!-- <script src="./script.js" defer></script> -->
+</body>
+</html>

@@ -12,7 +12,7 @@ const showNav = ( toggleId, navId, bodyId, headerId ) => {
             // toggle.classList.toggle( 'fa-solid fa-xmark' );
             bodypd.classList.toggle( 'body-pd' );
             headerpd.classList.toggle( 'body-pd' );
-        })
+        } );
     }
 };
 
@@ -29,44 +29,8 @@ function colorLink () {
 
 linkColor.forEach( l => l.addEventListener( 'click', colorLink ) );
 
-// Axios stuff
 
-// Login
-
-const userLogin = async ( e ) => {
-    e.preventDefault();
-    const userEmail = document.getElementById( 'email' ).value;
-    const userPassword = document.getElementById( 'password' ).value;
-    try {
-        const res = await axios.post( 'http://localhost:3000/api/v1/auth/login', {
-            email: userEmail,
-            password: userPassword
-        } );
-        console.log( res.data.user );
-        window.location.href = './approvedTestimonies.html';
-    } catch (error) {
-        console.log( error );
-    }
-}
-
-// Sign Up
-
-const userSignUp = async ( e ) => {
-    e.preventDefault();
-    const userName = document.getElementById( 'name' ).value;
-    const userEmail = document.getElementById( 'email' ).value;
-    const userPassword = document.getElementById( 'password' ).value;
-    try {
-        const res = await axios.post( 'http://localhost:3000/api/v1/auth/register', {
-            name: userName,
-            email: userEmail,
-            password: userPassword
-        } );
-        console.log( res.data.user );
-    } catch ( error ) {
-        console.log( error );
-    }
-};
+// Donate with Stripe API
 
 const donate = () => {
     fetch( "http://localhost:8000/donate", {
@@ -92,6 +56,7 @@ const donate = () => {
         } );
 };
 
-document.getElementById( 'donate' ).addEventListener( 'click', donate );
-document.getElementById( 'signUp' ).addEventListener( 'click', userSignUp );
-document.getElementById( 'login' ).addEventListener( 'click', userLogin );
+const donateBtn = document.getElementById( 'donate' );
+if ( donateBtn ) {
+    document.getElementById( 'donate' ).addEventListener( 'click', donate );
+}

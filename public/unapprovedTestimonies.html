@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Testimonies</title>
+    <title>Pending Testimonies</title>
 </head>
 <body id="body-pd">
     <header class="header" id="header">
@@ -24,23 +24,63 @@
                 </a>
 
                 <div class="nav_list">
-                    <a href="#" class="nav_link active">
+                    <a href="./unapprovedTestimonies.html" class="nav_link active">
                         <i class="fa-solid fa-book nav_icon"></i>
                         <span class="nav_name">Testimonies</span>
                     </a>
-                    <a href="#" class="nav_link">
+                    <a href="./unapprovedAnnouncements.html" class="nav_link">
                         <i class="fa-solid fa-scroll nav_icon"></i>
                         <span class="nav_name">Announcements</span>
                     </a>
                 </div>
             </div>
-            <a href="#" class="nav_link">
+            <a href="./login.html" class="nav_link">
                 <i class="fa-solid fa-right-from-bracket nav_icon"></i>
                 <span class="nav_name">Logout</span>
             </a>
         </nav>
     </div>
-    <span>Testimonies Pending Approval</span>
-    <script src="./script.js"></script>
+    <section class="container">
+        <div class="intro">
+            <span>Testimonies Pending Approval</span>
+            <button id="view-admin-testimonies">View Testimonies</button>
+        </div>
+        <div class="form" id="admin-testimony">
+            <form class="testimony-form">
+                <input type="text" id="admin-testimony-title" placeholder="Title">
+                <textarea name="" id="admin-testimony-body" cols="30" rows="10" placeholder="Body"></textarea>
+                <input type="text" id="admin-testimony-tag" placeholder="Tag">
+                <input type="text" id="admin-testimony-status" placeholder="Status">
+                <input type="text" id="admin-testimony-id" placeholder="Id" disabled>
+                <div class="buttons">
+                    <button class="update" id="admin-testimony-update">Update</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="./script.js" defer></script>
+    <script>
+        window.addEventListener( 'load', () => {
+            if ( window.localStorage.getItem('testimony') !== null ) {
+                const testimony = JSON.parse(window.localStorage.getItem('testimony'));
+                document.getElementById( 'admin-testimony-title' ).value = testimony['title'];
+                document.getElementById( 'admin-testimony-body' ).value = testimony['body'];
+                document.getElementById( 'admin-testimony-tag' ).value = testimony['tag'];
+                document.getElementById( 'admin-testimony-status' ).value = testimony['status'];
+                document.getElementById( 'admin-testimony-id' ).value = testimony['id'];
+            }
+
+            document.getElementById('admin-testimony-update').addEventListener( 'click', () =>{
+                const testimony = {
+                    title: document.getElementById( 'admin-testimony-title' ).value,
+                    body: document.getElementById( 'admin-testimony-body' ).value,
+                    tag: document.getElementById( 'admin-testimony-tag' ).value,
+                    status: document.getElementById( 'admin-testimony-status' ).value,
+                    id: document.getElementById( 'admin-testimony-id' ).value
+                }
+                window.localStorage.setItem('testimony', JSON.stringify(testimony));
+            } )
+        } );
+    </script>
 </body>
 </html>

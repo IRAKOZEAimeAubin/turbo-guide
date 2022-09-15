@@ -59,6 +59,15 @@ input {
     color: var(--very-dark-grey-color);
 }
 
+textarea {
+    margin-bottom: 0.8rem;
+    padding: 0.4rem;
+    border: 0.01rem solid var(--very-dark-grey-color);
+    border-radius: 0.2rem;
+    outline: none;
+    color: var(--very-dark-grey-color);
+}
+
 .button {
     padding: 0.4rem;
     background: var(--very-dark-grey-color);

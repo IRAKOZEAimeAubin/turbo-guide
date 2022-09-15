@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Pending Announcements</title>
+</head>
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle">
+            <i class="fa-solid fa-bars" id="header-toggle"></i>
+        </div>
+    </header>
+
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <a href="#" class="nav_logo">
+                    <i class="fa-solid fa-layer-group nav_logo-icon"></i>
+                    <span class="nav_logo-name">RGATOMS</span>
+                </a>
+
+                <div class="nav_list">
+                    <a href="./unapprovedTestimonies.html" class="nav_link">
+                        <i class="fa-solid fa-book nav_icon"></i>
+                        <span class="nav_name">Testimonies</span>
+                    </a>
+                    <a href="./unapprovedAnnouncements.html" class="nav_link active">
+                        <i class="fa-solid fa-scroll nav_icon"></i>
+                        <span class="nav_name">Announcements</span>
+                    </a>
+                </div>
+            </div>
+            <a href="./login.html" class="nav_link">
+                <i class="fa-solid fa-right-from-bracket nav_icon"></i>
+                <span class="nav_name">Logout</span>
+            </a>
+        </nav>
+    </div>
+    <section class="container">
+        <div class="intro">
+            <span>Announcements Pending Approval</span>
+            <button id="view-admin-announcements">View Announcements</button>
+        </div>
+        <div class="form" id="admin-announcement">
+            <form class="announcement-form">
+                <input type="text" id="admin-announcement-title" placeholder="Title" disabled>
+                <textarea name="" id="admin-announcement-body" cols="30" rows="10" placeholder="Body" disabled></textarea>
+                <input type="text" id="admin-announcement-tag" placeholder="Tag" disabled>
+                <input type="text" id="admin-announcement-status" placeholder="Status">
+                <input type="text" id="admin-announcement-id" placeholder="Id" disabled>
+                <div class="buttons">
+                    <button class="update" id="admin-announcement-update">Update</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="./script.js" defer></script>
+    <script>
+        window.addEventListener( 'load', () => {
+            if ( window.localStorage.getItem('announcement') !== null ) {
+                const announcement = JSON.parse(window.localStorage.getItem('announcement'));
+                document.getElementById( 'admin-announcement-title' ).value = announcement['title'];
+                document.getElementById( 'admin-announcement-body' ).value = announcement['body'];
+                document.getElementById( 'admin-announcement-tag' ).value = announcement['tag'];
+                document.getElementById( 'admin-announcement-status' ).value = announcement['status'];
+                document.getElementById( 'admin-announcement-id' ).value = announcement['id'];
+            }
+
+            document.getElementById('admin-announcement-update').addEventListener( 'click', () =>{
+                const announcement = {
+                    title: document.getElementById( 'admin-announcement-title' ).value,
+                    body: document.getElementById( 'admin-announcement-body' ).value,
+                    tag: document.getElementById( 'admin-announcement-tag' ).value,
+                    status: document.getElementById( 'admin-announcement-status' ).value,
+                    id: document.getElementById( 'admin-announcement-id' ).value
+                }
+                window.localStorage.setItem('announcement', JSON.stringify(announcement));
+            } )
+        } );
+    </script>
+</body>
+</html>

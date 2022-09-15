@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Create Announcement</title>
+</head>
+<body>
+    <section class="container">
+        <div class="form">
+            <span class="title">Create Announcement</span>
+            <form class="signup-form">
+                <input type="text" id="announcement-title" required placeholder="Title" autocomplete="off">
+                <textarea id="announcement-body" cols="30" rows="10" placeholder="Body"></textarea>
+                <input type="text" id="announcement-tag" required placeholder="Tag" autocomplete="off">
+                <button class="button" id="create-announcement-btn">Create Announcement</button>
+                <div class="redirect-text">
+                    <a href="./myAnnouncements.html">Go to my announcements</a>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        window.addEventListener( 'load', () => {
+            document.getElementById( 'create-announcement-btn' ).addEventListener( 'click', function (e) {
+            e.preventDefault();
+            const announcement = {
+                title: document.getElementById( 'announcement-title' ).value,
+                body: document.getElementById( 'announcement-body' ).value,
+                tag: document.getElementById( 'announcement-tag' ).value,
+                status: 'pending',
+                id: 1
+            }
+            window.localStorage.setItem( 'announcement', JSON.stringify( announcement ) );
+            console.log( announcement );
+        });
+        } )
+    </script>
+</body>
+</html>

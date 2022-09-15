@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Testimonies</title>
+    <title>My Announcements</title>
 </head>
 <body id="body-pd">
     <header class="header" id="header">
@@ -46,7 +46,7 @@
                     </a>
                 </div>
             </div>
-            <a href="#" class="nav_link">
+            <a href="./login.html" class="nav_link">
                 <i class="fa-solid fa-right-from-bracket nav_icon"></i>
                 <span class="nav_name">Logout</span>
             </a>
@@ -54,19 +54,19 @@
     </div>
      <section class="container">
         <div class="intro">
-            <span>Announcements</span>
+            <span>My Announcements</span>
             <div class="intro-buttons">
                 <button id="view-my-announcements">View My Announcements</button>
-                <button id="create-announcement">Create Announcements</button>
+                <button id="create-announcement-link">Create Announcements</button>
             </div>
         </div>
         <div class="form" id="my-announcement">
             <form class="announcement-form">
-                <input type="text" id="" placeholder="Title">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Body"></textarea>
-                <input type="text" id="" placeholder="Tag">
-                <input type="text" id="" placeholder="Status" disabled>
-                <input type="text" id="" placeholder="Id" disabled>
+                <input type="text" id="my-announcement-title" placeholder="Title">
+                <textarea name="" id="my-announcement-body" cols="30" rows="10" placeholder="Body"></textarea>
+                <input type="text" id="my-announcement-tag" placeholder="Tag">
+                <input type="text" id="my-announcement-status" placeholder="Status" disabled>
+                <input type="text" id="my-announcement-id" placeholder="Id" disabled>
                 <div class="buttons">
                     <button class="update">Update</button>
                     <button class="delete">Delete</button>
@@ -74,6 +74,21 @@
             </form>
         </div>
     </section>
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
+    <script>
+        document.getElementById( 'create-announcement-link' ).addEventListener( 'click', function () {
+            window.location.href = 'http://localhost:8000/createAnnouncement.html';
+        } );
+        window.addEventListener( 'load', () => {
+            if ( window.localStorage.getItem('announcement') !== null ) {
+                const announcement = JSON.parse(window.localStorage.getItem('announcement'));
+                document.getElementById( 'my-announcement-title' ).value = announcement['title'];
+                document.getElementById( 'my-announcement-body' ).value = announcement['body'];
+                document.getElementById( 'my-announcement-tag' ).value = announcement['tag'];
+                document.getElementById( 'my-announcement-status' ).value = announcement['status'];
+                document.getElementById( 'my-announcement-id' ).value = announcement['id'];
+            }
+        } );
+    </script>
 </body>
 </html>
